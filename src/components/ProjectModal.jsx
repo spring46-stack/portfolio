@@ -36,6 +36,7 @@ export default function ProjectModal({ project, onClose }) {
         {project.unverified && (
           <p className="modal__notice">
             ⚠ 修正中
+          </p>
         )}
 
         <section className="modal__section">
