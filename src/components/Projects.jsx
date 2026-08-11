@@ -17,7 +17,7 @@ export default function Projects() {
         </div>
         <p className="section-lead">
           シンプルなCRUDアプリから、別フレームワーク、そしてDocker・CI/CDを使ったフルスタック構成まで、
-          実際に取り組んだ順に並べています。番号(01〜04)はそのまま制作順です。
+          実際に取り組んだ順に並べています。
         </p>
 
         <div className="projects__grid">
