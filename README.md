@@ -1,4 +1,4 @@
-# K — Portfolio
+# Portfolio
 
 React + Viteで作成したエンジニアポートフォリオサイトです。
 
