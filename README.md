@@ -1,76 +1,87 @@
 # K — Portfolio
 
-React + Viteで作成したポートフォリオサイトです。GitHub Actionsで自動ビルド・GitHub Pagesへの自動デプロイを行います。
+React + Viteで作成したエンジニアポートフォリオサイトです。
 
-詳しい仕様は [SPEC.md](./SPEC.md) を参照してください。
+これまでの開発経験や制作物、今後の学習・キャリアロードマップなどをまとめています。
 
-## 使用技術
+また、単にWebサイトを作るだけではなく、開発環境の構築からビルド・デプロイまでを一通り経験することを目的として、Docker・GitHub Actions・GitHub Pagesを利用しています。
 
-- フロントエンド: React 18, Vite
-- ローカル開発環境: Docker, docker-compose
-- CI/CD: GitHub Actions
-- ホスティング: GitHub Pages
+---
 
-## ローカルでの動かし方
+## Portfolio
 
-### npmで直接動かす場合
+**公開サイト**
 
-```bash
-npm install
-npm run dev
-# http://localhost:5173 で確認できます
-```
+https://spring46-stack.github.io/portfolio/
 
-### Dockerで動かす場合
+---
 
-```bash
-# 開発サーバー(ホットリロードあり)
-docker compose up dev
-# http://localhost:5173
+## Features
 
-# 本番ビルドの確認(GitHub Pagesに公開される見た目に近い状態)
-docker compose up preview
-# http://localhost:8080
-```
+このポートフォリオでは、以下の内容を掲載しています。
 
-## GitHubリポジトリを作成して公開するまでの手順
+- 自己紹介
+- スキル・使用技術
+- 開発・制作したプロジェクト
+- プロジェクトの詳細
+- エンジニアとしての学習内容
+- 今後の学習・キャリアロードマップ
 
-このリポジトリはローカルの `git` リポジトリとして作成済みですが、GitHub上への作成・pushは
-認証情報が必要なため、お手元で行っていただく必要があります。以下の手順で進めてください。
+また、以下の開発環境・運用環境を構築しています。
 
-1. **GitHub上に空のリポジトリを作成する**
-   [https://github.com/new](https://github.com/new) から、Owner を `spring46-stack`、リポジトリ名を任意(例: `portfolio`)で作成します。「Add a README」などのチェックは付けずに、空の状態で作成してください。
+- React + Viteによるフロントエンド開発
+- Dockerによるローカル開発環境
+- GitHub Actionsによる自動ビルド
+- GitHub Pagesへの自動デプロイ
 
-2. **ローカルのリポジトリにリモートを追加してpushする**
+---
 
-   ```bash
-   cd portfolio
-   git remote add origin https://github.com/spring46-stack/<作成したリポジトリ名>.git
-   git branch -M main
-   git push -u origin main
-   ```
+# 🛠 使用技術
 
-3. **GitHub Pagesを有効にする**
+| 分類 | 技術 |
+| --- | --- |
+| フロントエンド | React 18 |
+| ビルドツール | Vite |
+| 開発環境 | Docker / docker-compose |
+| バージョン管理 | Git / GitHub |
+| CI/CD | GitHub Actions |
+| ホスティング | GitHub Pages |
 
-   リポジトリの `Settings` → `Pages` を開き、`Build and deployment` の `Source` を **「GitHub Actions」** に設定します。(すでに `.github/workflows/deploy.yml` を用意しているので、この設定をするだけで自動的にビルド・公開が行われます。)
+---
 
-4. **公開を確認する**
+# システム構成
 
-   `main` ブランチにpushすると、`Actions` タブでワークフローが実行されます。成功すると
-   `https://spring46-stack.github.io/<リポジトリ名>/` でサイトが公開されます。
+このポートフォリオは、以下の流れで開発・公開しています。
 
-## ディレクトリ構成(抜粋)
-
-```
-portfolio/
-├─ .github/workflows/deploy.yml   # CI/CD
-├─ src/
-│  ├─ components/                 # 各セクションのコンポーネント
-│  ├─ data/                       # プロジェクト・ロードマップのデータ
-│  ├─ assets/placeholders/        # 画面図のプレースホルダー画像
-│  └─ hooks/useReveal.js          # スクロール時のフェードイン
-├─ Dockerfile                     # dev / build / prod のマルチステージ構成
-├─ docker-compose.yml
-├─ SPEC.md
-└─ README.md
-```
+```text
+┌─────────────────┐
+│   Local PC      │
+│                 │
+│ React + Vite    │
+│ Docker          │
+└────────┬────────┘
+         │
+         │ git push
+         ↓
+┌─────────────────┐
+│     GitHub      │
+│                 │
+│ Git Repository  │
+└────────┬────────┘
+         │
+         │ pushを検知
+         ↓
+┌─────────────────┐
+│ GitHub Actions  │
+│                 │
+│ npm ci          │
+│ npm run build   │
+└────────┬────────┘
+         │
+         │ deploy
+         ↓
+┌─────────────────┐
+│  GitHub Pages   │
+│                 │
+│  Portfolio      │
+└─────────────────┘
