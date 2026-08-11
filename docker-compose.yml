@@ -1,0 +1,27 @@
+# 使い方:
+#   開発する時          → docker compose up dev       (http://localhost:5173)
+#   本番ビルドを確認する時 → docker compose up preview   (http://localhost:8080)
+#
+# なぜ2つに分けているか:
+#   「開発中に見る画面」と「実際に公開される画面(ビルド後)」は
+#   厳密には別物(圧縮・最適化される等)なので、公開前に本番相当の見た目を
+#   確認できるサービスを分けて用意している。
+services:
+  dev:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  preview:
+    build:
+      context: .
+      target: prod
+    ports:
+      - "8080:80"

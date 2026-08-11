@@ -1,0 +1,19 @@
+<svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="メモ編集画面">
+  <defs>
+    <pattern id="hatch-notes-edit" width="14" height="14" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#2A355C" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="600" fill="#182042"/>
+  <rect x="0" y="0" width="960" height="600" fill="url(#hatch-notes-edit)" opacity="0.25"/>
+  <rect x="24" y="24" width="912" height="552" fill="none" stroke="#2A355C" stroke-width="2" stroke-dasharray="6 6"/>
+  <!-- ブラウザ風の上部バー -->
+  <rect x="24" y="24" width="912" height="40" fill="#2A355C" opacity="0.4"/>
+  <circle cx="46" cy="44" r="5" fill="#8D96B8" opacity="0.5"/>
+  <circle cx="64" cy="44" r="5" fill="#8D96B8" opacity="0.5"/>
+  <circle cx="82" cy="44" r="5" fill="#8D96B8" opacity="0.5"/>
+  <text x="480" y="330" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="20" fill="#E8A33D" opacity="0.9">[ ✎ EDIT ]</text>
+  <text x="480" y="380" text-anchor="middle" font-family="Zen Kaku Gothic New, sans-serif" font-size="30" font-weight="700" fill="#EDEAE0">メモ編集画面</text>
+  <text x="480" y="412" text-anchor="middle" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#8D96B8">notes-app</text>
+  <text x="480" y="560" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" letter-spacing="4" fill="#8D96B8" opacity="0.6">PLACEHOLDER — 差し替え予定</text>
+</svg>

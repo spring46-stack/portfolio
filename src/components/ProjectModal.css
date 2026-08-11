@@ -1,0 +1,148 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 11, 22, 0.78);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 20px;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line-strong);
+  padding: 40px;
+  animation: modal-in 0.25s ease;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  color: var(--text-dim);
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: var(--radius);
+}
+
+.modal__close:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.modal__no {
+  color: var(--accent);
+  font-size: 26px;
+}
+
+.modal__title {
+  font-size: 26px;
+  margin-top: 4px;
+}
+
+.modal__subtitle {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+
+.modal__notice {
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  color: var(--text);
+  font-size: 13.5px;
+  padding: 12px 14px;
+  margin-bottom: 24px;
+  border-radius: var(--radius);
+}
+
+.modal__section {
+  margin-top: 32px;
+}
+
+.modal__section-title {
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  color: var(--accent-2);
+  margin-bottom: 16px;
+}
+
+.modal__process {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  counter-reset: step;
+}
+
+.modal__process li {
+  padding-left: 20px;
+  border-left: 2px solid var(--line-strong);
+}
+
+.modal__process-step {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.modal__process p {
+  color: var(--text-dim);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.modal__screens {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.modal__screen {
+  margin: 0;
+  border: 1px solid var(--line);
+}
+
+.modal__screen img {
+  width: 100%;
+  border-bottom: 1px solid var(--line);
+}
+
+.modal__screen figcaption {
+  font-size: 12px;
+  color: var(--text-dim);
+  padding: 8px 10px;
+  font-family: var(--font-mono);
+}
+
+.modal__repo-link {
+  margin-top: 32px;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 560px) {
+  .modal {
+    padding: 28px 20px;
+  }
+}

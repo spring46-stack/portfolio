@@ -1,0 +1,231 @@
+/* ==========================================================================
+   デザイントークン
+   コンセプト: 「設計図(ブループリント)の上に、積み上げてきた学習の記録を描く」
+   - 背景は製図用紙のような深いネイビー
+   - アクセントは製図の書き込みに使う朱色/アンバーの色鉛筆をイメージ
+   - 罫線は破線(点線)で、実際の設計図面の寸法線を意識している
+   ========================================================================== */
+:root {
+  --bg: #10162b;
+  --bg-soft: #141b36;
+  --surface: #182042;
+  --surface-raised: #1e2750;
+  --line: #2a355c;
+  --line-strong: #3a4778;
+  --text: #edeae0;
+  --text-dim: #8d96b8;
+  --text-faint: #5c6690;
+  --accent: #e8a33d;
+  --accent-soft: rgba(232, 163, 61, 0.14);
+  --accent-2: #5fb090;
+  --accent-2-soft: rgba(95, 176, 144, 0.14);
+
+  --font-display: "Zen Kaku Gothic New", "Space Grotesk", sans-serif;
+  --font-body: "Noto Sans JP", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --container: 1120px;
+  --radius: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 製図用紙のような、ごく薄いグリッド地紋 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.06;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ---- レイアウト共通 ---- */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 96px 0;
+  position: relative;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.section-title {
+  font-size: clamp(24px, 3.2vw, 34px);
+}
+
+.section-rule {
+  flex: 1;
+  height: 0;
+  border-top: 1px dashed var(--line-strong);
+  transform: translateY(-6px);
+}
+
+.section-lead {
+  color: var(--text-dim);
+  max-width: 640px;
+  margin-top: 8px;
+  font-size: 15.5px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  padding: 4px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--text-dim);
+  background: var(--surface);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--line-strong);
+  color: var(--text);
+  background: var(--surface);
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  background: var(--surface-raised);
+  transform: translateY(-1px);
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #14101a;
+  border-color: var(--accent);
+}
+
+.btn.primary:hover {
+  background: #f0b459;
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* スクロールで現れるフェード */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 64px 0;
+  }
+}

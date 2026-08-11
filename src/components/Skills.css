@@ -1,0 +1,38 @@
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.skills__item {
+  background: var(--surface);
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: background 0.2s ease;
+}
+
+.skills__item:hover {
+  background: var(--surface-raised);
+}
+
+.skills__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.skills__note {
+  font-size: 11.5px;
+  color: var(--accent-2);
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 860px) {
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
