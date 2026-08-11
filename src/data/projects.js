@@ -123,7 +123,7 @@ export const projects = [
     stack: ["PHP", "ユニットテスト", "CI"],
     repo: "https://github.com/spring46-stack/php-testing-practice",
     summary:
-      "バックエンド(PHP)のロジックに対して、ユニットテストを書く練習として取り組んだリポジトリ。※このプロジェクトの詳細な仕様は未確認のため、下記は暫定的な説明です。正式公開前に内容を見直してください。",
+      "バックエンド(PHP)のロジックに対して、ユニットテストを書く練習として取り組んだリポジトリ。",
     process: [
       {
         step: "目的",
@@ -133,12 +133,12 @@ export const projects = [
       {
         step: "進め方",
         detail:
-          "※詳細は要確認。関数・クラス単位でテストケースを書き、GitHub Actions上でテストを自動実行する流れを想定。",
+          "※関数・クラス単位でテストケースを書き、GitHub Actions上でテストを自動実行する。",
       },
       {
         step: "学び",
         detail:
-          "※詳細は要確認。実装後にこの項目を具体的な学びに書き換えてください。",
+          "※修正中",
       },
     ],
     screens: [

@@ -7,14 +7,12 @@ export default function Hero() {
         <div className="hero__copy">
           <p className="hero__eyebrow mono">PORTFOLIO / 2026</p>
           <h1 className="hero__title">
-            積み上げてきたのは、
-            <br />
-            コードだけじゃない。
+            修正中
           </h1>
           <p className="hero__lead">
             はじめまして、<strong>K</strong>です。フロントエンド・フルスタック開発を独学で学んでいます。
             タスク管理アプリから始め、検索機能、別フレームワーク(Vue.js)、そしてDocker/CI・CDを使った
-            フルスタック構成まで、少しずつ難易度を上げながら4つのアプリケーションを作ってきました。
+            フルスタック構成まで、少しずつ難易度を上げながら⚪︎つのアプリケーションを作ってきました。
           </p>
           <div className="hero__actions">
             <a href="#projects" className="btn primary">

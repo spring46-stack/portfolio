@@ -35,8 +35,7 @@ export default function ProjectModal({ project, onClose }) {
 
         {project.unverified && (
           <p className="modal__notice">
-            ⚠ このプロジェクトの内容は詳細未確認です。下記は暫定的な説明のため、公開前に本人の確認・修正が必要です。
-          </p>
+            ⚠ 修正中
         )}
 
         <section className="modal__section">
