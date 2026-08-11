@@ -49,6 +49,23 @@ https://spring46-stack.github.io/portfolio/
 
 ---
 
+
+# ローカルでの動かし方
+npmで直接動かす場合
+npm install
+npm run dev
+# http://localhost:5173 で確認できます
+
+Dockerで動かす場合
+# 開発サーバー(ホットリロードあり)
+docker compose up dev
+# http://localhost:5173
+
+# 本番ビルドの確認(GitHub Pagesに公開される見た目に近い状態)
+docker compose up preview
+# http://localhost:8080
+
+
 # システム構成
 
 このポートフォリオは、以下の流れで開発・公開しています。
