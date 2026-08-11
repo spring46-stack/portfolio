@@ -50,20 +50,46 @@ https://spring46-stack.github.io/portfolio/
 ---
 
 
-# ローカルでの動かし方
-npmで直接動かす場合
+## ローカルでの動かし方
+
+### npmで直接動かす場合
+
+```bash
 npm install
 npm run dev
-# http://localhost:5173 で確認できます
+```
 
-Dockerで動かす場合
-# 開発サーバー(ホットリロードあり)
+起動後、以下のURLにアクセスしてください。
+
+http://localhost:5173
+
+---
+
+### Dockerで動かす場合
+
+#### 開発サーバー
+
+ホットリロードに対応した開発環境を起動します。
+
+```bash
 docker compose up dev
-# http://localhost:5173
+```
 
-# 本番ビルドの確認(GitHub Pagesに公開される見た目に近い状態)
+起動後、以下のURLにアクセスしてください。
+
+http://localhost:5173
+
+#### 本番ビルドの確認
+
+GitHub Pagesに公開される状態に近い、本番ビルド後の画面を確認できます。
+
+```bash
 docker compose up preview
-# http://localhost:8080
+```
+
+起動後、以下のURLにアクセスしてください。
+
+http://localhost:8080
 
 
 # システム構成
